@@ -42,6 +42,12 @@ class BankAccount {
     operator fun plus(amount: Double): Double = balance + amount
 }
 
+class Animal(map: Map<String, String>) {
+    val race by map
+    val name by map
+    val country by map
+}
+
 fun main(args: Array<String>) {
     val anImportantObject = ImportantClass()
 
@@ -55,4 +61,12 @@ fun main(args: Array<String>) {
 
     myAccount.balance = myAccount + 30.00
     println(myAccount)
+
+    val cangaroo = Animal(mapOf(
+            "name" to "Jumper",
+            "race" to "Cangaroo",
+            "country" to "Australia"
+    ))
+
+    println("Animal{name:${cangaroo.name}, race:${cangaroo.race}, country:${cangaroo.country}}")
 }
