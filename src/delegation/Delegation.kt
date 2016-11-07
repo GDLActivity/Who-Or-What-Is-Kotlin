@@ -24,7 +24,7 @@ class LessImportant(val importantImpl: ImportantClass) : ImportantMethods by imp
 
 class BankAccount {
     val accountNumber by lazy {
-        val numb = (Math.random() * 1000).toInt()
+        val numb = (Math.random() * 1000).toInt() //
         println("Your account number is: $numb")
 
         numb
