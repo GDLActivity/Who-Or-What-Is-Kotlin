@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
     println(aNullObject?.name?.firstName)
     println(aNullObject?.name?.lastName)
 
-    // Throw a NPE (NullPointerException
+    // Throw a NPE (NullPointerException)
     aNullObject?.name?.firstName!!.let { println(it.length) }
 
     val neverNull: String = canReturnOrNot() ?: "Did not returned"

@@ -23,3 +23,14 @@ data class Man(val name: String, val lastName: String) {
 data class Baby(val name: String, val lastName: String, val surName: String)
 
 data class Love(val whatsFor: String)
+
+fun main(args: Array<String>) {
+    val aWoman = Woman("Pancha", "Juana")
+    val aMan = Man("Abraham", "Mayo")
+
+    val aErnesto = Man("Ernesto", "Espinoza")
+
+    println(aWoman + aMan)
+
+    println(aMan + aErnesto)
+}

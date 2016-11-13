@@ -23,6 +23,10 @@ fun main(args: Array<String>) {
 
     // Inference:
     val anotherChacon = GDLActivityUser()
+
+    println(anotherChacon)
+
+    println(anotherChacon.name)
 }
 
 class GDLActivityUser {

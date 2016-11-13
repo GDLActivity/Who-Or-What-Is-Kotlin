@@ -56,6 +56,10 @@ fun String.leftpad(size: Int, char: String = " " /*`char` defaults to `' '`*/): 
     }
 }
 
+fun Int.divideByTwo(): Int{
+    return this / 2
+}
+
 fun String.leftpad(size: Int, value: Any): String = this.leftpad(size, value.toString())
 
 fun main(args: Array<String>) {
@@ -66,4 +70,6 @@ fun main(args: Array<String>) {
 
     println("GDLActivity".leftpad(3))
     println("GDLActivity".leftpad(30, ""))
+
+    println(5.divideByTwo())
 }
