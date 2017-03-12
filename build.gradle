@@ -22,6 +22,10 @@ allprojects {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
+    sourceSets {
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+
     repositories {
         mavenCentral()
     }
@@ -30,6 +34,7 @@ allprojects {
         compile fileTree(dir: 'lib', include: ['*.jar'])
         compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-        testCompile group: 'junit', name: 'junit', version: '4.11'
+        testCompile "junit:junit:4.12"
+        testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
     }
 }

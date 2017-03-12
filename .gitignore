@@ -65,3 +65,8 @@ fabric.properties
 hs_err_pid
 /build/
 /.gradle/
+/.idea/vcs.xml
+/.idea/modules.xml
+/.idea/misc.xml
+/.idea/compiler.xml
+/.idea/modules/

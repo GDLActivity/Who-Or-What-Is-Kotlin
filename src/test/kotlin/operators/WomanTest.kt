@@ -6,9 +6,6 @@ import org.junit.Before
 import org.junit.Ignore
 import org.junit.Test
 
-/**
- * Created by sierisimo on 2/22/17.
- */
 class WomanTest {
     lateinit var woman: Woman
     lateinit var baby: Baby
