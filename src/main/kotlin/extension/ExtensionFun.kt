@@ -3,7 +3,7 @@ package extension
 /**
  * Created by sierisimo on 11/6/16.
  */
-val cache = arrayListOf("",
+val cache = mutableListOf("",
         " ",
         "  ",
         "   ",
@@ -20,7 +20,7 @@ fun String.leftpad(size: Int, char: String = " " /*`char` defaults to `' '`*/): 
             cache[len] + this
         } else if (char == " " && len > cache.size) {
             // If len is not cached, put it on the cache
-            while (len >= cache.size) cache.add(cache[cache.size] + " ")
+            while (len >= cache.size) cache.add(cache[cache.size - 1] + " ")
 
             // now a cache common use case
             cache[len] + this
@@ -56,7 +56,7 @@ fun String.leftpad(size: Int, char: String = " " /*`char` defaults to `' '`*/): 
     }
 }
 
-fun Int.divideByTwo(): Int{
+fun Int.divideByTwo(): Int {
     return this / 2
 }
 
@@ -68,7 +68,7 @@ fun main(args: Array<String>) {
     println(word.leftpad(10))
     println(word.leftpad(20, "-"))
 
-    println("GDLActivity".leftpad(3))
+    println("GDLActivity".leftpad(20))
     println("GDLActivity".leftpad(30, ""))
 
     println(5.divideByTwo())

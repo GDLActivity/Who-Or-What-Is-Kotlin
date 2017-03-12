@@ -1,0 +1,35 @@
+buildscript {
+    ext.kotlin_version = '1.1.0'
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'kotlin'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile fileTree(dir: 'lib', include: ['*.jar'])
+        compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+        testCompile group: 'junit', name: 'junit', version: '4.11'
+    }
+}
