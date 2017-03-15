@@ -3,11 +3,6 @@ package classes
 import java.util.*
 
 /**
- * Created by sierisimo on 11/6/16.
- *
- */
-
-/**
  * This is a class, this is an example on how to create a famous "Java Bean",
  * it contains methods:
  *
@@ -77,6 +72,7 @@ class Meme {
     public var name: String
     public var createdAt: Date = Date() // We can initialize the properties on declaration
     public var isFamous: Boolean
+    protected lateinit var size: Pair<Double, Double> // And you can use `lateinit` to specify when something will be assigned later
 
     /**
      * Or use the "init" function that is a kind of constructor/initializer (duh!)
@@ -84,6 +80,7 @@ class Meme {
     init {
         name = ""
         isFamous = false
+        size = Pair(2.5, 4.2)
     }
 }
 

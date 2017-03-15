@@ -8,32 +8,17 @@ import org.junit.Test
 
 class WomanTest {
     lateinit var woman: Woman
-    lateinit var baby: Baby
-    lateinit var man: Man
 
     @Before
     fun setUp() {
-        println("Before")
         woman = Woman("Julia", "Lang")
-        man = Man("Pascal", "Math")
-        baby = Baby("Baby", "Math", "Lang")
     }
 
-    @After
-    fun tearDown() {
-        println("Finished")
-    }
-
-    @Ignore
     @Test
     fun test_plus() {
+        val man = Man("Pascal", "Math")
+        val baby = woman + man
 
+        assertEquals("Check baby name is... 'baby'", "Baby", baby.name)
     }
-
-    @Test
-    fun test_getName() {
-        assertEquals("Check that woman name is Julia", "Julia", woman.name)
-        assertNotEquals("Name shouldn't be Pascal", "Pascal", woman.name)
-    }
-
 }

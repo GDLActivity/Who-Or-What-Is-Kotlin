@@ -3,9 +3,6 @@ package delegation
 import extension.leftpad
 import kotlin.properties.Delegates
 
-/**
- * Created by sierisimo on 11/6/16.
- */
 interface ImportantMethods {
     fun importantMethod()
 

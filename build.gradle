@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.1.0'
+    ext.kotlin_version = '1.1.1'
 
     repositories {
         mavenCentral()
@@ -8,6 +8,17 @@ buildscript {
 
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-M3'
+    }
+}
+
+apply plugin: 'org.junit.platform.gradle.plugin'
+
+junitPlatform {
+    filters {
+        engines {
+            include 'spek'
+        }
     }
 }
 
@@ -28,13 +39,19 @@ allprojects {
 
     repositories {
         mavenCentral()
+        jcenter()
+        maven { url "http://dl.bintray.com/jetbrains/spek" }
     }
 
     dependencies {
         compile fileTree(dir: 'lib', include: ['*.jar'])
         compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-        testCompile "junit:junit:4.12"
+        //testCompile "junit:junit:4.12"
+        testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
         testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+        testCompile 'org.jetbrains.spek:spek-api:1.1.0-beta3'
+        testCompile 'org.junit.platform:junit-platform-runner:1.0.0-M3'
+        testRuntime 'org.jetbrains.spek:spek-junit-platform-engine:1.1.0-beta3'
     }
 }
