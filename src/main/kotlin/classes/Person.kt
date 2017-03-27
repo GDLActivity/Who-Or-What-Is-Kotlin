@@ -21,6 +21,7 @@ import java.util.*
  */
 data class Person(val id: Long, val name: String, val age: Int)
 
+
 /**
  * If we want to have more than one constructor we can do it using the reserved word: constructor
  *
@@ -32,6 +33,12 @@ data class Kid(val name: String, val surname: String) {
 
     constructor() : this("", "") // We don't care about the data on this object, that's why we pass empty strings
 }
+
+/**
+ * Additionally, if you want an empty constructor and don't want to define this constructor manually you
+ * can set default values for the attributes
+ */
+data class Boy(val name: String = "Boy", var age: Int = 13)
 
 /**
  * By default, a data class doesn't have methods, only accesors (getters and setters for every property)

@@ -31,9 +31,7 @@ allprojects {
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
-    }
 
-    sourceSets {
         test.java.srcDirs += 'src/test/kotlin'
     }
 
@@ -46,12 +44,14 @@ allprojects {
     dependencies {
         compile fileTree(dir: 'lib', include: ['*.jar'])
         compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        compile "org.jetbrains.kotlin:kotlin-runtime:$kotlin_version"
+        compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
         //testCompile "junit:junit:4.12"
         testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
         testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
-        testCompile 'org.jetbrains.spek:spek-api:1.1.0-beta3'
+        testCompile 'org.jetbrains.spek:spek-api:1.1.0-beta4'
         testCompile 'org.junit.platform:junit-platform-runner:1.0.0-M3'
-        testRuntime 'org.jetbrains.spek:spek-junit-platform-engine:1.1.0-beta3'
+        testRuntime 'org.jetbrains.spek:spek-junit-platform-engine:1.1.0-beta4'
     }
 }
